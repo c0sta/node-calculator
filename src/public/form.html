@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Calculator</title>
+  </head>
+  <body>
+    <form method="POST">
+      <section class="inputs">
+        <!-- Adicionei o min="0" p/ que não seja possível adicionar numeros negativos -->
+        <label for="number">First number: </label>
+        <input
+          name="number1"
+          type="number"
+          placeholder="First value"
+          min="0"
+          class="inputs__num1"
+        />
+        <label for="number">Second number: </label>
+
+        <input
+          name="number2"
+          type="number"
+          placeholder="Second value"
+          min="0"
+          class="inputs__num2"
+        />
+      </section>
+      <section class="operations">
+        <button type="submit" formaction="/sum" id="sum" onclick="postSum()">
+          +
+        </button>
+        <button
+          type="submit"
+          formaction="/subtraction"
+          id="sub"
+          onclick="postSub()"
+        >
+          -
+        </button>
+        <button
+          type="submit"
+          formaction="/multiplication"
+          id="multi"
+          onclick="postMulti()"
+        >
+          x
+        </button>
+        <button
+          type="submit"
+          formaction="/division"
+          id="div"
+          onclick="postDiv()"
+        >
+          ÷
+        </button>
+      </section>
+    </form>
+    <script src="./index.js" type="application/javascript"></script>
+  </body>
+</html>
