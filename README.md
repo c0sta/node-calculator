@@ -1,4 +1,4 @@
-![gitmoji-changelog logo](https://raw.githubusercontent.com/frinyvonnick/gitmoji-changelog/master/misc/logo.png)
+![gitmoji-changelog logo]("https://img.shields.io/npm/v/gitmoji-changelog")
 # node-calculator
 Basic calculator made with Nodejs, performs basic operations such as addition, subtraction, multiplication and division
 
