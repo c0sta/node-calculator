@@ -1,13 +1,14 @@
-// Pega o input
-var input = document.querySelector(".input");
-// Pega os botões com o name="digit"
-var buttons = document.querySelectorAll('[name="digit"], [name="operation"]');
-console.log(buttons);
 
-/* Percorre a lista de digitos e adiciona
-um eventListener no evento de click
+// Pega o input da calculadora
+var input = document.querySelector(".input");
+// Pega os botões numéricos e de operações
+var buttons = document.querySelectorAll('[name="digit"], [name="operation"]');
+
+input.addEventListener("change", () => {}); // Faz com que o input seja atualizado quando o botão for clicado
+
+/* Percorre a lista de botões e adiciona
+um eventListener, para que quando qualquer um desses botões - [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, +, -, /, x] - for clicado o seu texto seja concatenado no input da calculadora
 */
-input.addEventListener("change", () => {}); // Faz com que o input seja atualizado quando clicar nos botões
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
@@ -16,6 +17,16 @@ buttons.forEach((button) => {
     console.log(newValue);
   });
 });
+
+/**
+ * Botão que limpa o input da calculadora, essa função define o valor do input para uma 
+ * string vazia = ""
+ */
+var clearButton = document.querySelector('[name="clear"]').addEventListener('click', (event) => {
+  event.preventDefault();
+  input.value = "";
+})
+
 
 // var calculateButton = document
 //   .querySelector('[name="calculate"]')
@@ -33,10 +44,3 @@ buttons.forEach((button) => {
 //   });
 
 // console.log("input", input);
-
-
-// Botão que limpa o campo de input da calculadora
-var clearButton = document.querySelector('[name="clear"]').addEventListener('click', (event) => {
-    event.preventDefault();
-    input.value = "";
-})

@@ -12,11 +12,14 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 // Monitora as requisições de GET no caminho raíz "/"
 routes.get("/", MainController.main);
-routes.get("/log", LogController.log);
-/* Monitora as requisições de POST na rota /calculate
+/* Monitora as requisições de POST na rota /calculate 
+
+
   OBS - Passar esse urlencodedParser foi o que fez funcionar,
-  até então os números inseridos estavam vindo como undefined 
+  até então os números inseridos na calculadora estavam vindo como undefined 
   */
- routes.post('/calculate', urlencodedParser,OperationsController.calculate)
+ routes.post('/calculate', urlencodedParser, OperationsController.operacoes)
+// Rota que retorna o arquivo de log
+ routes.get("/log", LogController.log);
 
 module.exports = routes;
