@@ -1,18 +1,14 @@
 // importando o microframework Express, para facilitar o roteamento da aplicação
 var express = require("express"),
   morgan = require("morgan"),
-  routes = require("./src/routes"),
-  bodyParser = require("body-parser");
+  routes = require("./src/routes");
 
 var server = express();
 
 // Configura os middlewares
-server.use(morgan("dev"));
-// server.use(bodyParser);
-// server.use(bodyParser.urlencoded({ extended: false }));
-server.use(bodyParser.json());
-server.use(routes);
-server.use(express.static("./src/public"));
+server.use(morgan("dev")); // Middleware que auxilia com o debug do app
+server.use(routes); // Middleware das rotas
+server.use(express.static("./src/public")); // Servindo os arquivos estáticos, html, css.
 
 // Roda servidor na porta 8080
 server.listen(8080, function () {
