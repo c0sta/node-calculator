@@ -1,48 +1,37 @@
-/* 
+var log = require("../helpers/log-helper");
+/*
   Arquivo contendo a função respectiva de cada operação.
-  Essa sintaxe de exports é por causa do requisito de usar CommonJS
+  OBS: Essa sintaxe de exports é por causa do requisito de usar CommonJS nas operações
 */
-
 module.exports = {
-  calc(req, res) {
-    if (!req.body) return res.sendStatus(400);
-    console.log("dentro da soma", JSON.stringify(req.body));
-    var nums = req.body;
-
-    var result = parseInt(nums.number1) + parseInt(nums.number2);
-    return res.send({ result: result });
-  },
-
   sum(req, res) {
-    if (!req.body) return res.sendStatus(400);
-    console.log("dentro da soma", JSON.stringify(req.body));
-    var nums = req.body;
+    if (!req.body) return res.sendStatus(400); // Verifica se há um body na requisição
+    var { number1, number2 } = req.body;
+    var result = parseInt(number1) + parseInt(number2); // realiza a conta
 
-    var result = parseInt(nums.number1) + parseInt(nums.number2);
+    log(number1, number2, "+", result); // Passa os parametros necessarios p/ func helper, que criará os logs
+
     return res.send({ result: result });
   },
   subtraction(req, res) {
     if (!req.body) return res.sendStatus(400);
-    console.log("dentro da soma", JSON.stringify(req.body));
-    var nums = req.body;
-
-    var result = parseInt(nums.number1) - parseInt(nums.number2);
+    var { number1, number2 } = req.body;
+    var result = parseInt(number1) - parseInt(number2);
+    log(number1, number2, "-", result);
     return res.send({ result: result });
   },
   multiplication(req, res) {
     if (!req.body) return res.sendStatus(400);
-    console.log("dentro da soma", JSON.stringify(req.body));
-    var nums = req.body;
-
-    var result = parseInt(nums.number1) * parseInt(nums.number2);
+    var { number1, number2 } = req.body;
+    var result = parseInt(number1) * parseInt(number2);
+    log(number1, number2, "*", result);
     return res.send({ result: result });
   },
   division(req, res) {
     if (!req.body) return res.sendStatus(400);
-    console.log("dentro da soma", JSON.stringify(req.body));
-    var nums = req.body;
-
-    var result = parseInt(nums.number1) / parseInt(nums.number2);
+    var { number1, number2 } = req.body;
+    var result = parseInt(number1) / parseInt(number2);
+    log(number1, number2, "/", result);
     return res.send({ result: result });
   },
 };
