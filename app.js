@@ -1,6 +1,6 @@
 // importando o microframework Express, para facilitar o roteamento da aplicação
 var express = require("express"),
-  morgan = require("morgan"),
+  // morgan = require("morgan"),
   routes = require("./src/routes"),
   cors = require("cors");
 
@@ -20,7 +20,7 @@ var corsOptions = {
   },
 };
 // Configura os middlewares
-server.use(morgan("dev")); // Middleware que auxilia com o debug do app
+// server.use(morgan("dev")); // Middleware que auxilia com o debug do app
 server.use(routes); // Middleware das rotas
 server.use(express.static("./src/public")); // Servindo os arquivos estáticos, html, css.
 server.use(cors(corsOptions));
