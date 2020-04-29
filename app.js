@@ -25,7 +25,8 @@ server.use(routes); // Middleware das rotas
 server.use(express.static("./src/public")); // Servindo os arquivos estáticos, html, css.
 server.use(cors(corsOptions));
 
+var port = process.env.PORT || 8080;
 // Roda servidor na porta 8080
-server.listen(8080, function () {
-  console.log("==== SERVER LISTENING ON 8080 ====");
+server.listen(port, function () {
+  console.log(`==== SERVER LISTENING ON ${port} ====`);
 });
