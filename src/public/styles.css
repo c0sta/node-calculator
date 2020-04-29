@@ -22,6 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 /* Estilos da calculadora  */
@@ -33,21 +34,18 @@ body {
   padding: 10px;
   border-radius: 10px;
 }
-/* Estilo dos dois inputs  */
+
+/* Estilo dos inputs  */
 .inputs {
   display: flex;
   grid-area: inputs;
   align-items: center;
-  height: 65px;
+  height: 5em;
   width: 100%;
   background-color: #333;
   margin-bottom: 8px;
   border-radius: 10px;
 }
-.inputs__operation {
-  margin: 0 0.5em;
-}
-
 .number1,
 .number2 {
   width: 50%;
@@ -57,23 +55,28 @@ body {
   color: #fefefe;
   font-size: 1rem;
   border-radius: 10px;
+  border: none;
 }
+.operation {
+  color: #fefefe;
+  font-size: 1rem;
+  background-color: #333;
+}
+
 /* Retirando a seta q vem por default  */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 /* Estilização dos botões */
 .calculator-buttons {
-  /* small spacing within our container */
   padding: 20px;
-
-  /* the grid stuff! */
   display: grid;
-
-  /* create 4 columns */
+  /* cria 4 colunas */
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* Adiciona espaço de 15px entre os itens do grid */
   grid-gap: 15px;
 }
 
@@ -82,11 +85,24 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 1px solid #111; /* black border */
   padding: 20px;
   color: #eee; /* white text */
-  border-radius: 5px; /* rounded corners */
-  font-size: 22px; /* larger fonts */
+  border-radius: 0.5em; /* rounded corners */
+  font-size: 1rem; /* larger fonts */
   cursor: pointer; /* make it look clickable */
 }
-
+.log-button {
+  width: auto;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: #eee;
+  font-size: 22px;
+  text-align: center;
+}
 .is-zero,
 .is-clear {
   grid-column: span 3;
@@ -98,9 +114,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background: #28d060;
 }
 
-.operations {
-  grid-area: operations;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+button:disabled {
+  background-color: darkgray !important;
+  cursor: default;
 }
