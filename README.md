@@ -2,18 +2,17 @@
 
 # node-calculator
 Basic calculator made with Nodejs, performs basic operations such as addition, subtraction, multiplication and division
-
+S
 # Running
-Para rodar a aplicação, basta baixar ou clonar o projeto, e executar o seguinte comando na raiz.
+To run the application, simply download or clone the project, and run the following command in the root folder.```
 ```
 npm install 
 ```
-Após isso:
+After that, run:
 ```
 npm start 
 ```
-Abrir navegador no link:
-http:localhost:8080
+Open browser in [localhost:8080](http:localhost:8080)
 
 # Deploy 
 Deployed to Heroku
