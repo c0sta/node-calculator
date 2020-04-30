@@ -2,7 +2,9 @@
 
 # node-calculator
 Basic calculator made with Nodejs, performs basic operations such as addition, subtraction, multiplication and division
-S
+
+The project's intent is to put into practice some concepts I have learned so far, fixing some basic knowledge of Nodejs, Vanilla JavaScript and DOM manipulation
+
 # Running
 To run the application, simply download or clone the project, and run the following command in the root folder.```
 ```
